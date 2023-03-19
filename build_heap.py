@@ -34,12 +34,12 @@ def main():
     if choice == "I":
         n = int(input())
         data = list(map(int, input().split()))
-        assert len(data) == n
-        swaps = build_heap(data)
-        assert len(swaps) < 4*n
-        print(len(swaps))
-        for i, j in swaps:
-            print(i, j)
+        #assert len(data) == n
+        #swaps = build_heap(data)
+        #assert len(swaps) < 4*n
+        #print(len(swaps))
+        #for i, j in swaps:
+            #print(i, j)
     
     # input from file
     if choice == "F":
@@ -48,27 +48,28 @@ def main():
         with open(file, 'r') as f:
             n = int(f.readline())
             data = list(map(int, f.readline().split()))
-        assert len(data) == n
-        swaps = build_heap(data)
-        assert len(swaps) < 4*n
-        print(len(swaps))
+        #assert len(data) == n
+        #swaps = build_heap(data)
+        #assert len(swaps) < 4*n
+        #print(len(swaps))
         #for i, j in swaps:
             #print(i, j)
+    
     # checks if lenght of data is the same as the said lenght
-    #assert len(data) == n
+    assert len(data) == n
 
     # calls function to assess the data 
     # and give back all swaps
-    #swaps = build_heap(data)
+    swaps = build_heap(data)
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
-    #assert len(swaps) < 4*n
+    assert len(swaps) < 4*n
 
     # output all swaps
-    #print(len(swaps))
-    #for i, j in swaps:
-        #print(i, j)
+    print(len(swaps))
+    for i, j in swaps:
+        print(i, j)
 
 
 if __name__ == "__main__":
