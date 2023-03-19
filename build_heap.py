@@ -83,7 +83,7 @@ def main():
     #assert len(swaps) < 4*n
 
     # output all swaps
-    print(len(swaps))
+    #print(len(swaps))
     #for i, j in swaps:
         #print(i, j)
 
