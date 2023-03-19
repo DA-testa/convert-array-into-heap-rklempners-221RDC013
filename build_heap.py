@@ -6,36 +6,19 @@ def build_heap(data):
     size = len(data)
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    for i in range((size // 2) - 1, -1, -1):
-        index_1 = i 
-
-        left_child = 2 * i + 1
-        if left_child < size and data[left_child] < data[index_1]:
-            index_1 = left_child
-        
-        right_child = 2 * i + 2
-        if right_child < size and data[right_child] < data[index_1]:
-            index_1 = right_child
-
-        if i != index_1:
-            swaps.append((i, index_1))
-            data[i], data[index_1] = data[index_1], data[i]
-
-            while index_1 * 2 + 1 < size:
-                left_child = index_1 * 2 + 1
-                right_child = index_1 * 2 + 2 if index_1 * 2 + 2 < size else left_child
-
-                if data[left_child] < data[right_child]:
-                    child = left_child
-                else:
-                    child = right_child
-
-                if data[index_1] > data[child]:
-                    swaps.append((index_1, child))
-                    data[index_1], data[child] = data[child], data[index_1]
-                    index_1 = child
-                else:
-                    break        
+    for i in range(size // 2, -1, -1):
+        j = i
+        while True:
+            k = 2 * j + 1
+            if k >= size:
+                break
+            if k + 1 < size and data[k + 1] < data[k]:
+                k = k + 1
+            if data[j] <= data[k]:
+                break
+            swaps.append((j,k))
+            data[j], data[k] = data[k], data[j]
+            j = k    
 
     return swaps
 
