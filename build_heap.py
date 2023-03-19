@@ -52,8 +52,8 @@ def main():
         swaps = build_heap(data)
         #assert len(swaps) < 4*n
         print(len(swaps))
-        for i, j in swaps:
-            print(i, j)
+        #for i, j in swaps:
+            #print(i, j)
     # checks if lenght of data is the same as the said lenght
     #assert len(data) == n
 
